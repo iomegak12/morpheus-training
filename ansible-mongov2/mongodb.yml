@@ -5,6 +5,7 @@
       apt:
         deb: http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
       become: true
+      
     - name: Check if MongoDB APT keyring exists
       stat:
         path: /usr/share/keyrings/mongo-key.gpg
@@ -60,6 +61,7 @@
         backup: yes
       notify:
         - Restart MongoDB Service
+        
   handlers:
     - name: Restart MongoDB Service
       service: name=mongod state=started
