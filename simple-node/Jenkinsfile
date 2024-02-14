@@ -6,7 +6,7 @@ node {
     }
 
     stage('Build image') {
-        app = docker.build('iomega/hellonode')
+        app = docker.build('jtdhamodharan/hellonode')
     }
 
     stage('Test image') {
